@@ -66,7 +66,10 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.recovery.bacon.rc \
     ueventd.bacon.rc
-
+# Doze
+PRODUCT_PACKAGES += \
+    OnePlusDoze
+    
 # Call the proprietary setup
 $(call inherit-product, vendor/oneplus/bacon/bacon-vendor.mk)
 

@@ -58,6 +58,9 @@ TARGET_SYSTEM_PROP += device/oneplus/bacon/system.prop
 # Recovery
 TARGET_RECOVERY_FSTAB := device/oneplus/bacon/rootdir/etc/fstab.recovery
 
+# Add fix for common JACK issues
+ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m
+
 # SELinux
 BOARD_SEPOLICY_DIRS += \
     device/oneplus/bacon/sepolicy

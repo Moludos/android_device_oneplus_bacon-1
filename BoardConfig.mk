@@ -20,8 +20,12 @@
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=bacon user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=msm_sdcc.1 androidboot.selinux=permissive
-TARGET_KERNEL_CONFIG := lineageos_bacon_defconfig
+TARGET_KERNEL_CONFIG := pnw_bacon_defconfig
 TARGET_KERNEL_SOURCE := kernel/oppo/msm8974
+#KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.9/bin
+#KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE := bacon,A0001
@@ -62,7 +66,7 @@ TARGET_RECOVERY_FSTAB := device/oneplus/bacon/rootdir/etc/fstab.recovery
 ANDROID_JACK_VM_ARGS := -Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m
 
 # SELinux
-BOARD_SEPOLICY_DIRS += \
+#BOARD_SEPOLICY_DIRS += \
     device/oneplus/bacon/sepolicy
 
 # Snapdragon LLVM
